@@ -1,5 +1,5 @@
-import 'package:flutter/painting.dart';
 import 'package:dkc_cabinet_configurator/assets/colors/colors.dart';
+import 'package:flutter/painting.dart';
 
 //ignore_for_file: public_member_api_docs
 
@@ -16,8 +16,7 @@ TextStyle textLight = _text.copyWith(fontWeight: FontWeight.w300);
 //Regular
 TextStyle textRegular = _text.copyWith(fontWeight: FontWeight.normal);
 TextStyle textRegular16 = textRegular.copyWith(fontSize: 16.0);
-TextStyle textRegular16Secondary =
-    textRegular16.copyWith(color: textColorSecondary);
+TextStyle textRegular16Secondary = textRegular16.copyWith(color: textColorSecondary);
 TextStyle textRegular16Grey = textRegular16.copyWith(color: textColorGrey);
 
 //Medium

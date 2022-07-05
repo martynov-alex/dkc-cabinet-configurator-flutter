@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:dkc_cabinet_configurator/features/navigation/domain/entity/app_routes.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 /// Main point of the application navigation.
