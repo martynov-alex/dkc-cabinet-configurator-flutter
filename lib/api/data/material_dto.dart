@@ -1,11 +1,11 @@
+import 'package:dkc_cabinet_configurator/features/specification/domain/entity/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'material_api.g.dart';
+part 'material_dto.g.dart';
 
+/// [MaterialDto] для [Material], получаемый от DKC API при запросе по артикулу [code].
 @JsonSerializable()
-
-/// [MaterialApi] объект, получаемый от DKC API при запросе по артикулу [code]
-class MaterialApi {
+class MaterialDto {
   /// Уникальный идентификатор элемента в БД.
   final int id;
 
@@ -78,8 +78,8 @@ class MaterialApi {
   /// Массив аксессуаров к данному материалу. Указаны code материалов.
   final List<String> accessories_codes;
 
-  ///
-  MaterialApi({
+  /// Конструктор.
+  MaterialDto({
     required this.id,
     required this.node_id,
     required this.name,
@@ -105,6 +105,7 @@ class MaterialApi {
     required this.accessories_codes,
   });
 
-  factory MaterialApi.fromJson(Map<String, dynamic> json) =>
-      _$MaterialApiFromJson(json['material'] as Map<String, dynamic>);
+  /// Создание экземпляра [MaterialDto] из JSON.
+  factory MaterialDto.fromJson(Map<String, dynamic> json) =>
+      _$MaterialDtoFromJson(json['material'] as Map<String, dynamic>);
 }

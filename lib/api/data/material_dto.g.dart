@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'material_api.dart';
+part of 'material_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-MaterialApi _$MaterialApiFromJson(Map<String, dynamic> json) => MaterialApi(
+MaterialDto _$MaterialDtoFromJson(Map<String, dynamic> json) => MaterialDto(
       id: json['id'] as int,
       node_id: json['node_id'] as int,
       name: json['name'] as String,
@@ -38,7 +38,7 @@ MaterialApi _$MaterialApiFromJson(Map<String, dynamic> json) => MaterialApi(
           .toList(),
     );
 
-Map<String, dynamic> _$MaterialApiToJson(MaterialApi instance) =>
+Map<String, dynamic> _$MaterialDtoToJson(MaterialDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'node_id': instance.node_id,
