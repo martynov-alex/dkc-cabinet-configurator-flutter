@@ -1,7 +1,7 @@
 import 'package:dkc_cabinet_configurator/features/specification/domain/entity/specification_line_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'specification.freezed.dart';
+part 'specification_entity.freezed.dart';
 
 /// Сущность спецификации [SpecificationEntity].
 @freezed
