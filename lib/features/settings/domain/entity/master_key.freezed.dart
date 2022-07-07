@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MasterKey {
-  String get masterKey => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MasterKeyCopyWith<MasterKey> get copyWith =>
@@ -27,7 +27,7 @@ mixin _$MasterKey {
 abstract class $MasterKeyCopyWith<$Res> {
   factory $MasterKeyCopyWith(MasterKey value, $Res Function(MasterKey) then) =
       _$MasterKeyCopyWithImpl<$Res>;
-  $Res call({String masterKey});
+  $Res call({String value});
 }
 
 /// @nodoc
@@ -40,12 +40,12 @@ class _$MasterKeyCopyWithImpl<$Res> implements $MasterKeyCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? masterKey = freezed,
+    Object? value = freezed,
   }) {
     return _then(_value.copyWith(
-      masterKey: masterKey == freezed
-          ? _value.masterKey
-          : masterKey // ignore: cast_nullable_to_non_nullable
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -57,7 +57,7 @@ abstract class _$$_MasterKeyCopyWith<$Res> implements $MasterKeyCopyWith<$Res> {
           _$_MasterKey value, $Res Function(_$_MasterKey) then) =
       __$$_MasterKeyCopyWithImpl<$Res>;
   @override
-  $Res call({String masterKey});
+  $Res call({String value});
 }
 
 /// @nodoc
@@ -72,12 +72,12 @@ class __$$_MasterKeyCopyWithImpl<$Res> extends _$MasterKeyCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? masterKey = freezed,
+    Object? value = freezed,
   }) {
     return _then(_$_MasterKey(
-      masterKey: masterKey == freezed
-          ? _value.masterKey
-          : masterKey // ignore: cast_nullable_to_non_nullable
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -86,14 +86,14 @@ class __$$_MasterKeyCopyWithImpl<$Res> extends _$MasterKeyCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_MasterKey implements _MasterKey {
-  const _$_MasterKey({required this.masterKey});
+  const _$_MasterKey({required this.value});
 
   @override
-  final String masterKey;
+  final String value;
 
   @override
   String toString() {
-    return 'MasterKey(masterKey: $masterKey)';
+    return 'MasterKey(value: $value)';
   }
 
   @override
@@ -101,12 +101,12 @@ class _$_MasterKey implements _MasterKey {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_MasterKey &&
-            const DeepCollectionEquality().equals(other.masterKey, masterKey));
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(masterKey));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
@@ -115,10 +115,10 @@ class _$_MasterKey implements _MasterKey {
 }
 
 abstract class _MasterKey implements MasterKey {
-  const factory _MasterKey({required final String masterKey}) = _$_MasterKey;
+  const factory _MasterKey({required final String value}) = _$_MasterKey;
 
   @override
-  String get masterKey => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_MasterKeyCopyWith<_$_MasterKey> get copyWith =>

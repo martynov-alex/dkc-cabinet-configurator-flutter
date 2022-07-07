@@ -1,13 +1,13 @@
-import 'package:dkc_cabinet_configurator/api/data/material_dto.dart';
+import 'package:dkc_cabinet_configurator/api/data/material_dto_api.dart';
 import 'package:dkc_cabinet_configurator/features/specification/domain/entity/material.dart';
 
-/// Маппер для получения [Material] из [MaterialDto]
-Material mapMaterial(MaterialDto materialDto) {
+/// Маппер для получения [Material] из [MaterialDtoApi]
+Material mapMaterial(MaterialDtoApi materialDtoApi) {
   return Material(
-    code: materialDto.code,
-    name: materialDto.name,
-    unit: materialDto.unit,
-    price: materialDto.price,
-    weight: materialDto.weight,
+    code: materialDtoApi.code,
+    name: materialDtoApi.name,
+    unit: materialDtoApi.unit,
+    price: materialDtoApi.price,
+    weight: materialDtoApi.weight,
   );
 }

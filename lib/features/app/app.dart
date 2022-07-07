@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:dkc_cabinet_configurator/config/app_config.dart';
 import 'package:dkc_cabinet_configurator/config/debug_options.dart';
 import 'package:dkc_cabinet_configurator/config/environment/environment.dart';
 import 'package:dkc_cabinet_configurator/features/app/di/app_scope.dart';
 import 'package:dkc_cabinet_configurator/features/common/widgets/di_scope/di_scope.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 /// App widget.
 class App extends StatefulWidget {

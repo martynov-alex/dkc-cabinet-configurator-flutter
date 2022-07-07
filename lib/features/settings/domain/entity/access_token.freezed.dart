@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AccessToken {
-  String get accessToken => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AccessTokenCopyWith<AccessToken> get copyWith =>
@@ -28,7 +28,7 @@ abstract class $AccessTokenCopyWith<$Res> {
   factory $AccessTokenCopyWith(
           AccessToken value, $Res Function(AccessToken) then) =
       _$AccessTokenCopyWithImpl<$Res>;
-  $Res call({String accessToken});
+  $Res call({String value});
 }
 
 /// @nodoc
@@ -41,12 +41,12 @@ class _$AccessTokenCopyWithImpl<$Res> implements $AccessTokenCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? accessToken = freezed,
+    Object? value = freezed,
   }) {
     return _then(_value.copyWith(
-      accessToken: accessToken == freezed
-          ? _value.accessToken
-          : accessToken // ignore: cast_nullable_to_non_nullable
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -59,7 +59,7 @@ abstract class _$$_AccessTokenCopyWith<$Res>
           _$_AccessToken value, $Res Function(_$_AccessToken) then) =
       __$$_AccessTokenCopyWithImpl<$Res>;
   @override
-  $Res call({String accessToken});
+  $Res call({String value});
 }
 
 /// @nodoc
@@ -74,12 +74,12 @@ class __$$_AccessTokenCopyWithImpl<$Res> extends _$AccessTokenCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? accessToken = freezed,
+    Object? value = freezed,
   }) {
     return _then(_$_AccessToken(
-      accessToken: accessToken == freezed
-          ? _value.accessToken
-          : accessToken // ignore: cast_nullable_to_non_nullable
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -88,14 +88,14 @@ class __$$_AccessTokenCopyWithImpl<$Res> extends _$AccessTokenCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_AccessToken implements _AccessToken {
-  const _$_AccessToken({required this.accessToken});
+  const _$_AccessToken({required this.value});
 
   @override
-  final String accessToken;
+  final String value;
 
   @override
   String toString() {
-    return 'AccessToken(accessToken: $accessToken)';
+    return 'AccessToken(value: $value)';
   }
 
   @override
@@ -103,13 +103,12 @@ class _$_AccessToken implements _AccessToken {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AccessToken &&
-            const DeepCollectionEquality()
-                .equals(other.accessToken, accessToken));
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(accessToken));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
@@ -118,11 +117,10 @@ class _$_AccessToken implements _AccessToken {
 }
 
 abstract class _AccessToken implements AccessToken {
-  const factory _AccessToken({required final String accessToken}) =
-      _$_AccessToken;
+  const factory _AccessToken({required final String value}) = _$_AccessToken;
 
   @override
-  String get accessToken => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_AccessTokenCopyWith<_$_AccessToken> get copyWith =>

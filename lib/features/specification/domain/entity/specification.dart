@@ -1,29 +1,15 @@
-import 'package:dkc_cabinet_configurator/features/specification/domain/entity/specification_line.dart';
+import 'package:dkc_cabinet_configurator/features/specification/domain/entity/specification_line_entity.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-///
-class Specification {
-  ///
-  List<SpecificationLine> get specificationLines => _specificationLines;
+part 'specification.freezed.dart';
 
-  ///
-  List<SpecificationLine> _specificationLines = [];
-
-  ///
-  void addSpecificationLine(SpecificationLine line) {
-    _specificationLines.add(line);
-  }
-
-  ///
-  String calculateTotalPrice() {
-    final result =
-        _specificationLines.fold<double>(0, (previousValue, element) => previousValue + element.totalLinePrice);
-    return result.toStringAsFixed(2);
-  }
-
-  ///
-  String calculateTotalWeight() {
-    final result =
-        _specificationLines.fold<double>(0, (previousValue, element) => previousValue + element.totalLinePrice);
-    return result.toStringAsFixed(2);
-  }
+/// Сущность спецификации [SpecificationEntity].
+@freezed
+class SpecificationEntity with _$SpecificationEntity {
+  /// Конструктор.
+  const factory SpecificationEntity({
+    required List<SpecificationLineEntity> lines,
+    required double totalPrice,
+    required double totalWeight,
+  }) = _SpecificationEntity;
 }

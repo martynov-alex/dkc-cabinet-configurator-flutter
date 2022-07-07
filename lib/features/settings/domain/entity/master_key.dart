@@ -3,11 +3,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'master_key.freezed.dart';
 
-/// Мастер ключ [MasterKey], который пользователь получает от сотрудника DKC, по нему формируется [AccessToken].
+/// Объект-значение мастер ключа [MasterKey].
+/// Мастер ключ выдается сотрудником DKC, с помощью него создается [AccessToken].
 @freezed
 class MasterKey with _$MasterKey {
-  /// Фабрика по созданию [MasterKey].
+  /// Конструктор.
   const factory MasterKey({
-    required String masterKey,
+    required String value,
   }) = _MasterKey;
 }

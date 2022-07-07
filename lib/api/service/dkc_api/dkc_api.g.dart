@@ -18,7 +18,7 @@ class _DkcApi implements DkcApi {
   String? baseUrl;
 
   @override
-  Future<MaterialDto> getMaterial(code, accept, accessToken) async {
+  Future<MaterialDtoApi> getMaterial(code, accept, accessToken) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'code': code};
     final _headers = <String, dynamic>{
@@ -28,28 +28,28 @@ class _DkcApi implements DkcApi {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<MaterialDto>(
+        _setStreamType<MaterialDtoApi>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/catalog/material?',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = MaterialDto.fromJson(_result.data!);
+    final value = MaterialDtoApi.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<AccessTokenDto> getAccessToken(masterKey) async {
+  Future<AccessTokenDtoApi> getAccessToken(masterKey) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<AccessTokenDto>(
+        _setStreamType<AccessTokenDtoApi>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/auth.access.token/${masterKey}',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = AccessTokenDto.fromJson(_result.data!);
+    final value = AccessTokenDtoApi.fromJson(_result.data!);
     return value;
   }
 
