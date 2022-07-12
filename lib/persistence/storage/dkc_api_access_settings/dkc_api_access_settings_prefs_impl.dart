@@ -6,7 +6,7 @@ import 'package:dkc_cabinet_configurator/persistence/data/dkc_api_access_setting
 import 'package:dkc_cabinet_configurator/persistence/storage/dkc_api_access_settings/dkc_api_access_settings.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// Реализация интерфейса хранения настроек доступа к DKC API [IDkcApiAccessSettings] через Shared preferences.
+/// Реализация интерфейса хранения настроек доступа к DKC API [IDkcApiAccessSettings] через пакет shared_preferences.
 class DkcApiAccessSettingsPrefsImpl implements IDkcApiAccessSettings {
   static const String _dkcApiAccessSettings = 'dkcApiAccessSettings';
 

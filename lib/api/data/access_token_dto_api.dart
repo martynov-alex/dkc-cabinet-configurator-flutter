@@ -1,6 +1,6 @@
 import 'package:dkc_cabinet_configurator/features/settings/domain/entity/access_token.dart';
 import 'package:dkc_cabinet_configurator/features/settings/domain/entity/master_key.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'access_token_dto_api.g.dart';
 
