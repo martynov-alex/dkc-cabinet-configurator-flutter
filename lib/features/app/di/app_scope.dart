@@ -7,15 +7,24 @@ import 'package:dkc_cabinet_configurator/config/environment/environment.dart';
 import 'package:dkc_cabinet_configurator/features/navigation/domain/entity/app_route_paths.dart';
 import 'package:dkc_cabinet_configurator/features/navigation/domain/entity/app_routes.dart';
 import 'package:dkc_cabinet_configurator/features/navigation/service/router.dart';
+import 'package:dkc_cabinet_configurator/features/settings/service/settings_service.dart';
+import 'package:dkc_cabinet_configurator/persistence/storage/settings_storage/settings_storage.dart';
+import 'package:dkc_cabinet_configurator/persistence/storage/settings_storage/settings_storage_prefs_impl.dart';
 import 'package:dkc_cabinet_configurator/util/default_error_handler.dart';
 import 'package:elementary/elementary.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Scope of dependencies which need through all app's life.
 class AppScope implements IAppScope {
   late final Dio _dio;
   late final ErrorHandler _errorHandler;
-  late final VoidCallback _applicationRebuilder;
   late final AppRouter _router;
+  final SharedPreferences _sharedPreferences;
+  late final SettingsService _settingsService;
+  late final ISettingsStorage _settingsStorage;
+
+  @override
+  late VoidCallback applicationRebuilder;
 
   @override
   Dio get dio => _dio;
@@ -24,15 +33,21 @@ class AppScope implements IAppScope {
   ErrorHandler get errorHandler => _errorHandler;
 
   @override
-  VoidCallback get applicationRebuilder => _applicationRebuilder;
-
-  @override
   AppRouter get router => _router;
 
+  @override
+  SharedPreferences get sharedPreferences => _sharedPreferences;
+
+  @override
+  SettingsService get settingsService => _settingsService;
+
+  @override
+  ISettingsStorage get settingsStorage => _settingsStorage;
+
   /// Create an instance [AppScope].
-  AppScope({
-    required VoidCallback applicationRebuilder,
-  }) : _applicationRebuilder = applicationRebuilder {
+  AppScope(
+    this._sharedPreferences,
+  ) {
     /// List interceptor. Fill in as needed.
     final additionalInterceptors = <Interceptor>[];
 
@@ -40,8 +55,10 @@ class AppScope implements IAppScope {
     _errorHandler = DefaultErrorHandler();
     _router = AppRouter(
       delegate: AppRoutes(),
-      initialLocation: AppRoutePaths.tempScreen,
+      initialLocation: AppRoutePaths.splash,
     );
+    _settingsService = SettingsService();
+    _settingsStorage = SettingsStoragePrefsImpl(_sharedPreferences);
   }
 
   Dio _initDio(Iterable<Interceptor> additionalInterceptors) {
@@ -93,4 +110,13 @@ abstract class IAppScope {
 
   /// Class that coordinates navigation for the whole app.
   AppRouter get router;
+
+  ///
+  SettingsService get settingsService;
+
+  ///
+  SharedPreferences get sharedPreferences;
+
+  ///
+  ISettingsStorage get settingsStorage;
 }

@@ -13,7 +13,7 @@ void main() {
       url: Url.testUrl,
       proxyUrl: Url.devProxyUrl,
       debugOptions: DebugOptions(
-        debugShowCheckedModeBanner: true,
+        debugShowCheckedModeBanner: false,
       ),
     ),
   );

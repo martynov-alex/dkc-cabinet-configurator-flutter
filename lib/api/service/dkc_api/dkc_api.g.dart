@@ -38,10 +38,11 @@ class _DkcApi implements DkcApi {
   }
 
   @override
-  Future<AccessTokenDtoApi> getAccessToken(masterKey) async {
+  Future<AccessTokenDtoApi> getAccessToken(masterKey, accept) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'accept': accept};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AccessTokenDtoApi>(

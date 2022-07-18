@@ -1,11 +1,15 @@
-/// List of all the paths that are used to navigate in temp feature.
-///
-/// Have to been filled with the entries like this:
-/// ```dart
-/// /// Path description.
-/// static const String screenPath = '/screenPath';
-/// ```
+import 'package:dkc_cabinet_configurator/features/configurator/screens/configurator_screen.dart';
+import 'package:dkc_cabinet_configurator/features/settings/screens/settings_screen.dart';
+import 'package:dkc_cabinet_configurator/features/splash/screens/splash_screen.dart';
+
+/// Список всех путей, которые используются для навигации.
 abstract class AppRoutePaths {
-  /// Path to temp screen.
-  static const String tempScreen = '/tempScreen';
+  /// Путь к [SplashScreen].
+  static const String splash = '/splash';
+
+  /// Путь к [ConfiguratorScreen].
+  static const String configurator = '/configurator';
+
+  /// Путь к [SettingsScreen].
+  static const String settings = '/settings';
 }
