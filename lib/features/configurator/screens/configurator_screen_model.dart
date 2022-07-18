@@ -6,7 +6,7 @@ import 'package:elementary/elementary.dart';
 class ConfiguratorScreenModel extends ElementaryModel {
   final SettingsService _settingsService;
 
-  ///
+  /// Состояние настроек доступа к DKC API.
   StateNotifier<bool> get isDkcApiAccessSettingsActive => _settingsService.isDkcApiAccessSettingsActive;
 
   /// Конструктор.

@@ -54,15 +54,15 @@ class ConfiguratorScreenWidgetModel extends WidgetModel<ConfiguratorScreen, Conf
 
 /// Интерфейс для [ConfiguratorScreenWidgetModel].
 abstract class IConfiguratorScreenWidgetModel extends IWidgetModel {
-  ///
+  /// Текущее состояние переключателя шкагов в навигации.
   StateNotifier<int> get selectedIndex;
 
-  ///
+  /// Состояние настроек доступа к DKC API.
   StateNotifier<bool> get isDkcApiAccessSettingsActive;
 
-  ///
+  /// Виджет текщего шага.
   Widget get destinationWidget;
 
-  ///
+  /// Открыть окно настроек.
   void openSettingsScreen();
 }
