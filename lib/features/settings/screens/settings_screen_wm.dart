@@ -3,8 +3,6 @@ import 'package:dkc_cabinet_configurator/features/app/di/app_scope.dart';
 import 'package:dkc_cabinet_configurator/features/navigation/service/router.dart';
 import 'package:dkc_cabinet_configurator/features/settings/domain/entity/access_token.dart';
 import 'package:dkc_cabinet_configurator/features/settings/domain/repository/access_token_repository.dart';
-import 'package:dkc_cabinet_configurator/features/settings/domain/repository/data/failures.dart';
-import 'package:dkc_cabinet_configurator/features/settings/domain/repository/data/results.dart';
 import 'package:dkc_cabinet_configurator/features/settings/domain/repository/settings_repository.dart';
 import 'package:dkc_cabinet_configurator/features/settings/screens/settings_screen.dart';
 import 'package:dkc_cabinet_configurator/features/settings/screens/settings_screen_model.dart';
@@ -57,7 +55,7 @@ class SettingsScreenWidgetModel extends WidgetModel<SettingsScreen, SettingsScre
       accessTokenResult.when(
         success: (accessToken) {
           _saveSettings(masterKeyFormString, accessToken);
-          //_showSnackBar(accessToken.value);
+          model.setDkcApiAccessSettingsIsActive();
         },
         failure: (accessTokenRequestFailure) {
           accessTokenRequestFailure.when(

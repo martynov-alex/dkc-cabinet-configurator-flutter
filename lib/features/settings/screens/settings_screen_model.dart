@@ -17,8 +17,6 @@ class SettingsScreenModel extends ElementaryModel {
   /// Получить текущий мастер ключ для отображения в поле настроек.
   String get masterKey => _settingsService.currentSettings.masterKey.value;
 
-  late String _masterKeyStorage;
-
   /// Конструктор.
   SettingsScreenModel(this._settingsService, this._settingsRepository, this._accessTokenRepository);
 
@@ -35,5 +33,11 @@ class SettingsScreenModel extends ElementaryModel {
     _settingsService.currentSettings = newSettings;
     _settingsRepository.saveSettings(newSettings);
     debugPrint('Обновленные настройки ${_settingsService.currentSettings.toString()}');
+  }
+
+  /// Установить состояние активных настроек доступа к DKC API.
+  void setDkcApiAccessSettingsIsActive() {
+    _settingsService.isDkcApiAccessSettingsActive.accept(true);
+    debugPrint('Настройки доступа активны ${_settingsService.isDkcApiAccessSettingsActive.value}');
   }
 }

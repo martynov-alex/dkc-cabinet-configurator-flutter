@@ -13,7 +13,8 @@ import 'package:provider/provider.dart';
 ConfiguratorScreenWidgetModel _create(BuildContext context) {
   final appDependencies = context.read<IAppScope>();
   final router = appDependencies.router;
-  final model = ConfiguratorScreenModel();
+  final settingsService = appDependencies.settingsService;
+  final model = ConfiguratorScreenModel(settingsService);
   return ConfiguratorScreenWidgetModel(model, router);
 }
 
@@ -23,6 +24,7 @@ class ConfiguratorScreenWidgetModel extends WidgetModel<ConfiguratorScreen, Conf
   ///
   final AppRouter router;
   final _selectedIndex = StateNotifier<int>(initValue: 0);
+
   final List<Widget> _destinationsList = [
     const CabinetBaseScreen(),
     const AccessoriesScreen(),
@@ -31,6 +33,9 @@ class ConfiguratorScreenWidgetModel extends WidgetModel<ConfiguratorScreen, Conf
 
   @override
   StateNotifier<int> get selectedIndex => _selectedIndex;
+
+  @override
+  StateNotifier<bool> get isDkcApiAccessSettingsActive => model.isDkcApiAccessSettingsActive;
 
   @override
   Widget get destinationWidget => _destinationsList[_selectedIndex.value ?? 0];
@@ -44,7 +49,6 @@ class ConfiguratorScreenWidgetModel extends WidgetModel<ConfiguratorScreen, Conf
   @override
   void openSettingsScreen() {
     router.pushNamed(AppRouteNames.settings);
-    // router.pushNamed(AppRouteNames.settings);
   }
 }
 
@@ -52,6 +56,9 @@ class ConfiguratorScreenWidgetModel extends WidgetModel<ConfiguratorScreen, Conf
 abstract class IConfiguratorScreenWidgetModel extends IWidgetModel {
   ///
   StateNotifier<int> get selectedIndex;
+
+  ///
+  StateNotifier<bool> get isDkcApiAccessSettingsActive;
 
   ///
   Widget get destinationWidget;

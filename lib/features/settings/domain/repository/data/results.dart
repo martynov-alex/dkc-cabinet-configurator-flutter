@@ -8,7 +8,7 @@ part 'results.freezed.dart';
 /// Варианты результата для [AccessToken] при работе с [AccessTokenRepository].
 @freezed
 class AccessTokenResult with _$AccessTokenResult {
-  /// Успех - Объекта с [AccessToken]
+  /// Успех - Объект с [AccessToken]
   const factory AccessTokenResult.success({required AccessToken accessToken}) = _AccessTokenSuccess;
 
   /// Неудача - Объект с [AccessTokenRequestFailure]

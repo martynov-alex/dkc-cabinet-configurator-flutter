@@ -1,5 +1,5 @@
+import 'package:dkc_cabinet_configurator/features/configurator/domain/entity/material.dart';
 import 'package:dkc_cabinet_configurator/features/settings/domain/entity/access_token.dart';
-import 'package:dkc_cabinet_configurator/features/specification/domain/entity/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'material_dto_api.g.dart';

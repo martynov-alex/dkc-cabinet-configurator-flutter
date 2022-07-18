@@ -7,7 +7,7 @@ part 'failures.freezed.dart';
 /// Типы ошибок для [AccessToken] при работе с [AccessTokenRepository].
 @freezed
 class AccessTokenRequestFailure with _$AccessTokenRequestFailure {
-  /// Код 400 "Запрос некорректен. MASTER KEY - FAIL" или код 403" Запрос некорректен. MASTER KEY - NOT ACTIVE".
+  /// Код 400 "Запрос некорректен. MASTER KEY - FAIL" или код 403 "Запрос некорректен. MASTER KEY - NOT ACTIVE".
   const factory AccessTokenRequestFailure.wrongRequest(String message) = _WrongRequest;
 
   /// Код 500. "Не удалось выполнить запрос".

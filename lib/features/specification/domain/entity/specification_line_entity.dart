@@ -1,4 +1,4 @@
-import 'package:dkc_cabinet_configurator/features/specification/domain/entity/material.dart';
+import 'package:dkc_cabinet_configurator/features/configurator/domain/entity/material.dart';
 import 'package:dkc_cabinet_configurator/features/specification/domain/entity/specification_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
